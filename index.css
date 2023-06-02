@@ -3,133 +3,187 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    user-select: none;
+  height: 100%;
+  user-select: none;
 }
 
 body {
-    font: 300 70px/1 'Open Sans';
-    color: #d9d9d9;
-    background: #2a2b2e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font: 300 70px/1 'Open Sans';
+  color: #d9d9d9;
+  background: #2a2b2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem;
+
+  > * {
+    margin: 1rem;
+  }
+
+  opacity: 0;
+  animation: fadeInAnimation ease 2s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  opacity: 1;
+
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  background-color: transparent;
+
+  &:hover {
+    box-shadow: 5px 5px 15px #111;
+    transform: translateX(-1px) translateY(-1px);
+  }
+}
+
+.card-answer {
+  opacity: 1;
+  font-size: 1.4rem;
+  font-style: italic;
+  transition: all 0.6s ease-in-out;
 }
 
 #date {
-    font-size: 35px;
-    margin-bottom: 30px;
-    display: flex;
-    font-family: 'Ubuntu Mono';
-    color: #bdbdbd;
-    font-style: italic;
+  font-size: 35px;
+  margin-bottom: 30px;
+  display: flex;
+  font-family: 'Ubuntu Mono';
+  color: #bdbdbd;
+  font-style: italic;
 }
 
 #greeting {
-    font-size: 40px;
-    font-weight: bold;
-    margin: 45px 0px 60px 0px;
-    font-family: 'Varela Round' !important;
-    color: #f5f5f5;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 45px 0px 60px 0px;
+  font-family: 'Varela Round' !important;
+  color: #f5f5f5;
 }
 
 #dot {
-    color: #ffe084;
-    margin: 0px 5px;
+  color: #ffe084;
+  margin: 0px 5px;
 }
 
 #slash {
-    color: #ffb6b9;
+  color: #ffb6b9;
 }
 
 #chrome {
-    position: absolute;
-    left: 10px;
-    top: 10px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 
 a {
-    color: inherit;
+  color: inherit;
 }
 
 .clock {
-    width: 350px;
-    text-align: center;
-    overflow: hidden;
+  width: 350px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .clock span {
-    position: relative;
-    display: inline-block;
-    width: 50px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
 }
 
 .clock span:nth-child(2) {
-    border-right: 2px solid#ff7c7c;
-    margin-right: 10px;
-    width: 60px;
-    text-align: left;
+  border-right: 2px solid#ff7c7c;
+  margin-right: 10px;
+  width: 60px;
+  text-align: left;
 }
 
 .clock span:nth-child(4) {
-    border-right: 2px solid#8deaff;
-    margin-right: 10px;
-    width: 60px;
-    text-align: left;
+  border-right: 2px solid#8deaff;
+  margin-right: 10px;
+  width: 60px;
+  text-align: left;
 }
 
 .clock span:nth-child(6) {
-    text-align: left;
+  text-align: left;
 }
 
 .clock span:before,
 .clock span:after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    backface-visibility: hidden;
-    transition: transform 0.75s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  transition: transform 0.75s;
 }
 
 .clock span:before {
-    content: attr(data-old);
-    z-index: 1;
-    transform: translate3d(0, 0, 0);
+  content: attr(data-old);
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .clock .flip:before {
-    transform: translate3d(0, 102.5%, 0);
+  transform: translate3d(0, 102.5%, 0);
 }
 
 .clock span:after {
-    content: attr(data-now);
-    z-index: 2;
-    transform: translate3d(0, -102.5%, 0);
+  content: attr(data-now);
+  z-index: 2;
+  transform: translate3d(0, -102.5%, 0);
 }
 
 .clock .flip:after {
-    transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .clock-container {
-    padding: 20px 15px;
-    border-radius: 5px;
-    border: 1px solid #bdbdbd;
-    box-shadow: 5px 5px 15px #000;
-    background-color: transparent;
+  padding: 20px 15px;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  box-shadow: 5px 5px 15px #111;
+  background-color: transparent;
+}
+
+.hide {
+  opacity: 0;
+  transition: none;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,12 +1,12 @@
 {
-    "name": "Chromepage",
-    "description": "Personalized override of Chrome New Tab page.",
-    "version": "1.0",
-    "chrome_url_overrides": { "newtab": "index.html" },
-    "manifest_version": 2,
-    "icons": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
-    }
+  "name": "Ash's Chromepage",
+  "description": "A new tab page for Chrome with flashcards for world capitals.",
+  "version": "1.0",
+  "chrome_url_overrides": { "newtab": "index.html" },
+  "manifest_version": 3,
+  "icons": {
+    "16": "favicon_ntp.png",
+    "48": "favicon_ntp.png",
+    "128": "favicon_ntp.png"
+  }
 }
