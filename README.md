@@ -4,7 +4,7 @@ Personalized override of Chrome New Tab page, forked from https://github.com/kar
 
 ![](preview.gif)
 
-See a live demo [here](https://karenying.github.io/chromepage/).
+See a live demo [here](https://ashwhall.github.io/chromepage/).
 
 ## Installation
 
